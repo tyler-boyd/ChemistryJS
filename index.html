@@ -5,13 +5,35 @@
   <title>
     ChemistryJS demo
   </title>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 
 <body>
-  <h1>Chemistry.JS demo</h1>
-  <input type="text" id="eqn-field" />
-  <input type="submit" value="Balance!" id="submit-btn" />
-  <div id="output">
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <h1 class="page-header">Chemistry.JS demo</h1>
+      </div>
+      <div class="row">
+        <h2>Enter any chemical reaction below, and it will balance it instantly!</h3>
+      </div>
+      <div class="row">
+        <h3>Example: C3H8+O2=CO2+H2O</h3>
+      </div>
+      <div class="row">
+        <input class="col-lg-8 input-lg" type="text" id="eqn-field" />
+        <input class="btn btn-primary btn-lg" type="submit" value="Balance!" id="submit-btn" />
+        <div class="row">
+          <div class="col-lg-12" id="output-label">
+            Results: 
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12" id="output">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="jquery.js"></script>

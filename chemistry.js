@@ -131,12 +131,37 @@ function ChemistryProcessor (equation) {
     else
       this.balanced += " + " + x[i + inp_left_terms.length] + "(" + inp_right_terms[i] + ")";
   }
+
+  for(var i=0; i<x.length; i++)
+  {
+    if(isNaN(x[i]) || x[i] == 0)
+    {
+      this.balanced = "Invalid input equation! Please check it and try again.<br><br>Debug info: <br>";
+      for(var q=0; q<eqn_matrix.length; q++)
+      {
+        for(var w=0; w<eqn_matrix[q].length; w++)
+        {
+          this.balanced += "&#09;" + eqn_matrix[q][w];
+        }
+        this.balanced += "&#09;|" + b[q] + "<br>"
+      }
+    }
+  }
+
 }
 
 
 $(document).ready(function() {
   $("#submit-btn").on("click", function() {
     var cp = new ChemistryProcessor($("#eqn-field").val());
-    $("#output").text(cp.balanced);
+    $("#output").html(cp.balanced);
+  });
+  $("#eqn-field").on("click", function() {
+    var cp = new ChemistryProcessor($("#eqn-field").val());
+    $("#output").html(cp.balanced);
+  });
+  $(document).keypress(function(e) {
+    if(e.which == 13)
+      $("#submit-btn").click();
   });
 });
