@@ -1,7 +1,5 @@
-Chemistry.JS
-===============
-An Open-Source Chemistry Library
-------------------------------------
+Chemistry.JS:  An Open-Source Chemistry Library
+============================================================
 
 Usage
 ------
