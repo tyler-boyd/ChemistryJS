@@ -2,6 +2,8 @@ function ChemistryProcessor (equation) {
   if(!equation)
     return null;
 
+  equation = equation.replace(/\s/g, "");
+
   original_equation = equation;
 
   console.log("Before: " + equation);
